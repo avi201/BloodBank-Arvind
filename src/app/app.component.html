@@ -1,0 +1,42 @@
+
+<h3 align="center">BLOOD BANK</h3><hr/>
+      <input [ngClass]="newArr['id'] == 1 ? 'butt city': 'butt'" type="button" value="A+"  />&nbsp;&nbsp;&nbsp;
+      <input type="number" min="0" [(ngModel)]="countObj['1']" (ngModelChange)="changeVal(countObj['1'], 1)">&nbsp;&nbsp;&nbsp;
+      <input [ngClass]="newArr['id'] == 2 ? 'butt city': 'butt'" type="button" value="B+"/>&nbsp;&nbsp;&nbsp;
+      <input type="number" min="0"  [(ngModel)]="countObj['2']" (ngModelChange)="changeVal(countObj['2'], 2)"/><br><br>
+      <input [ngClass]="newArr['id'] == 3 ? 'butt city': 'butt'" type="button" value="O+"/>&nbsp;&nbsp;&nbsp;
+      <input type="number"  min="0" [(ngModel)]="countObj['3']" (ngModelChange)="changeVal(countObj['3'], 3)"/>&nbsp;&nbsp;&nbsp;
+      <input [ngClass]="newArr['id'] == 4 ? 'butt city': 'butt'" type="button" value="AB+"/>&nbsp;&nbsp;&nbsp;
+      <input type="number"  min="0" [(ngModel)]="countObj['4']" (ngModelChange)="changeVal(countObj['4'], 4)"/><br><br>
+      <input [ngClass]="newArr['id'] == 5 ? 'butt city': 'butt'" type="button" value="A-"/>&nbsp;&nbsp;&nbsp;
+      <input type="number" min="0" [(ngModel)]="countObj['5']" (ngModelChange)="changeVal(countObj['5'], 5)"/>&nbsp;&nbsp;&nbsp;
+      <input [ngClass]="newArr['id'] == 6 ? 'butt city': 'butt'" type="button" value="B-"/>&nbsp;&nbsp;&nbsp;
+      <input type="number" min="0"  [(ngModel)]="countObj['6']" (ngModelChange)="changeVal(countObj['6'], 6)"/><br><br>
+      <input [ngClass]="newArr['id'] == 7 ? 'butt city': 'butt'" type="button" value="O-"/>&nbsp;&nbsp;&nbsp;
+      <input type="number" min="0"  [(ngModel)]="countObj['7']" (ngModelChange)="changeVal(countObj['7'], 7)"/>&nbsp;&nbsp;&nbsp;
+      <input [ngClass]="newArr['id'] == 8 ? 'butt city': 'butt'" type="button" value="AB-"/>&nbsp;&nbsp;&nbsp;
+      <input type="number"  min="0" [(ngModel)]="countObj['8']" (ngModelChange)="changeVal(countObj['8'], 8)"/><br><br>
+    <br>
+   <br>
+  <br>
+ <br>
+
+    <div class="column">
+      <label>REQUIRMENT FORM</label><br>
+    <input  class="bloodrequired" type="button" style="background-color: #FF7F50"  value="Blood required"/>&nbsp;&nbsp;&nbsp;
+    <select type="text" class="butt"  [(ngModel)]="bloodObj['bloodGroup']" [ngModelOptions]="{standalone: true}" (change)="getBloodGroup(bloodObj['bloodGroup'])">&nbsp;&nbsp;&nbsp;
+    <option *ngFor="let list of bloodList" value="{{list.blood}}">{{list.blood}}</option>&nbsp;&nbsp;&nbsp;
+    </select>&nbsp;&nbsp;&nbsp;<br><br>
+ 
+    <input class="bloodrequired" style="background-color: #FF7F50" type="button" value="No of bottles"/>&nbsp;&nbsp;&nbsp;
+    <input type="number"  min="0" [(ngModel)]="range" (ngModelChange)="changeRange()"  /><span><br><br><button style="font-size: 10px;" class="button" placeholder="Submit" (click)="count()">Submit</button></span>
+  </div>
+    <h3 align="center">RESULT</h3><hr/>
+    <input *ngIf="showResult" class="butt" type="button" [(ngModel)]="bloodObj['bloodGroup']"/>&nbsp;&nbsp;&nbsp;
+    <input  *ngIf="showResult"class="butt" type="button"  [ngModel]="range" /><br>
+
+
+ 
+
+
+
