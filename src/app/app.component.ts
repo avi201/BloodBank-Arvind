@@ -34,9 +34,11 @@ export class AppComponent implements OnInit {
 
    // ********************   method for blood group drop down  *******************************
   getBloodGroup(val){
+    console.log('val==>>', val);
     this.showResult = false
     var indx = this.bloodList.findIndex((x)=>x['blood'] == val)
     this.newArr = this.bloodList[indx]
+    console.log('newArr==>>', this.newArr);
   }
 
 
@@ -95,5 +97,12 @@ export class AppComponent implements OnInit {
     alert("Please enter required number of bottles ")
   }
  }
+}
+
+transferDataSuccess(val){
+  this.getBloodGroup((val.dragData).toString());
+  this.bloodObj['bloodGroup'] = (val.dragData).toString()
+  setTimeout(()=>{this.count()}, 200);
+
 }
 }
